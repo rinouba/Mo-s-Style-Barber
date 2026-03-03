@@ -26,12 +26,12 @@
     }
   </script>
   <style>
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+    @keyframes slide-infinite {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); } /* نصف العرض = تحريك المجموعة الأولى خارج الشاشة */
     }
-    .animate-slide {
-      animation: slide 30s linear infinite;
+    .animate-slide-infinite {
+      animation: slide-infinite 10s linear infinite; /* مدة أطول قليلاً لتكون الحركة أبطأ وسلسة */
     }
     .glow-red {
       box-shadow: 0 0 15px rgba(193, 18, 31, 0.5);
@@ -63,7 +63,6 @@
         <a href="#gallery" class="hover:text-accent transition-colors">Gallery</a>
         <a href="#reviews" class="hover:text-accent transition-colors">Reviews</a>
         <a href="#booking" class="hover:text-accent transition-colors">Book</a>
-        <a href="#contact" class="px-5 py-2 bg-accent text-white rounded-full hover:glow-red transition-all">Book Now</a>
       </nav>
     </div>
   </header>
@@ -178,33 +177,54 @@
   </section>
 
   <!-- Image Gallery Section -->
-  <section id="gallery" class="py-20 bg-secondary">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Gallery</h2>
-      <div class="overflow-hidden">
-        <div class="animate-slide flex space-x-6">
-          <div class="flex-shrink-0 aspect-square w-80">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&auto=format&fit=crop&q=70" alt="Barber Shop" class="w-full h-full object-cover rounded-xl">
-          </div>
-          <div class="flex-shrink-0 aspect-square w-80">
-            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&auto=format&fit=crop&q=70" alt="Barber Tools" class="w-full h-full object-cover rounded-xl">
-          </div>
-          <div class="flex-shrink-0 aspect-square w-80">
-            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&fit=crop&q=70" alt="Interior" class="w-full h-full object-cover rounded-xl">
-          </div>
-          <div class="flex-shrink-0 aspect-square w-80">
-            <img src="https://images.unsplash.com/photo-1610475680335-dafab5475150?w=600&auto=format&fit=crop&q=70" alt="Finished Style" class="w-full h-full object-cover rounded-xl">
-          </div>
-          <div class="flex-shrink-0 aspect-square w-80">
-            <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&fit=crop&q=70" alt="Barber Chair" class="w-full h-full object-cover rounded-xl">
-          </div>
-          <div class="flex-shrink-0 aspect-square w-80">
-            <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?w=600&auto=format&fit=crop&q=70" alt="Tools" class="w-full h-full object-cover rounded-xl">
-          </div>
+<section id="gallery" class="py-20 bg-secondary">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Gallery</h2>
+    <div class="overflow-hidden">
+      <!-- الحاوية الجديدة - تضاعفت الصور -->
+      <div class="flex space-x-6 animate-slide-infinite">
+        <!-- المجموعة الأولى من الصور (مكررة) -->
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&auto=format&fit=crop&q=70" alt="Barber Shop" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&auto=format&fit=crop&q=70" alt="Barber Tools" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&fit=crop&q=70" alt="Interior" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1610475680335-dafab5475150?w=600fit=crop&q=70" alt="Finished Style" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&fit=crop&q=70" alt="Barber Chair" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?w=600&auto=format&fit=crop&q=70" alt="Tools" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <!-- المجموعة الثانية (مكررة من الأولى) -->
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&auto=format&fit=crop&q=70" alt="Barber Shop" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&auto=format&fit=crop&q=70" alt="Barber Tools" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&fit=crop&q=70" alt="Interior" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1610475680335-dafab5475150?w=600&auto=format&fit=crop&q=70" alt="Finished Style" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&auto=format&fit=crop&q=70" alt="Barber Chair" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex-shrink-0 aspect-square w-80">
+          <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?w=600&auto=format&fit=crop&q=70" alt="Tools" class="w-full h-full object-cover rounded-xl">
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Reviews Section -->
   <section id="reviews" class="py-20 bg-primary">
