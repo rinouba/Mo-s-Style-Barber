@@ -67,25 +67,55 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center pt-24 pb-16 px-6">
-    <div class="max-w-4xl mx-auto mt-16">
-      <div class="inline-block px-4 py-1 bg-accent/20 text-accent rounded-full mb-6 animate-pulse">
-        Open 7 Days a Week
-      </div>
-      <h1 class="font-bold text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-        <span class="text-light">MOS</span>
-        <span class="text-accent ml-4">STYLE</span>
-      </h1>
-      <p class="text-xl md:text-2xl text-grey mb-10 max-w-2xl mx-auto">
-        Premium Cuts & Grooming
-      </p>
-      <a href="#booking" class="px-8 py-4 bg-accent text-white font-bold rounded-full hover:glow-red transition-all inline-flex items-center">
-        Book Now
-        <i class="fas fa-arrow-right ml-2"></i>
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center justify-center text-center pt-24 pb-16 px-6 overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+       style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b7f30a?w=1920&auto=format&fit=crop&q=80');">
+    <div class="absolute inset-0 bg-gradient-to-br from-black/80 to-secondary/70"></div> <!-- Gradient Overlay -->
+  </div>
+
+  <!-- Decorative Elements -->
+  <div class="absolute top-10 left-10 w-24 h-1 bg-accent opacity-50"></div>
+  <div class="absolute bottom-10 right-10 w-24 h-1 bg-accent opacity-50 rotate-45"></div>
+  <div class="absolute top-1/3 right-1/4 w-2 h-20 bg-accent/30 rounded-full"></div>
+
+  <div class="max-w-4xl mx-auto mt z-10">
+    <!-- Badge -->
+    <div class="inline-block px-6 py-2 bg-accent/20 text-accent rounded-full mb-6 backdrop-blur-sm border border-accent/30 animate-pulse">
+      Est. 2020 • Open 7 Days
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="font-bold text-4xl md:text-6xl lg:text-7xl mb-4 leading-tight tracking-wide">
+      <span class="text-light drop-shadow-lg">MOS</span>
+      <span class="text-accent ml-4 block md:inline">STYLE</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="text-xl md:text-2xl text-grey mb-6 max-w-2xl mx-auto font-light tracking-wider">
+      Where Precision Meets Style
+    </p>
+
+    <!-- Tagline -->
+    <p class="text-lg text-grey/80 mb-10 max-w-xl mx-auto italic font-light">
+      Experience the art of traditional barbering with a modern twist
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#booking" class="px-8 py-4 bg-accent text-white font-bold rounded-full hover:glow-red transition-all inline-flex items-center justify-center group">
+        Book Appointment
+        <i class="fas fa-calendar-check ml-2 group-hover:translate-x-1 transition-transform"></i>
+      </a>
+      <a href="#gallery" class="px-8 py-4 bg-transparent border-2 border-accent text-accent font-bold rounded-full hover:bg-accent hover:text-white transition-all">
+        View Gallery
       </a>
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- About Section -->
   <section id="about" class="py-20 bg-secondary">
